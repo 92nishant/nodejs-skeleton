@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.33% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/15</span>
+                <span class='fraction'>6/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/9</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.33% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/15</span>
+                <span class='fraction'>6/18</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -105,6 +105,7 @@
 <a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -114,34 +115,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,43 +150,43 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const uuid = require('uuid')
 const User = require('../../../models/user')
 const { buildErrObject } = require('../../../middleware/utils')
+const { fileUploads } = require('../../../middleware/utils/commonUtils')
 &nbsp;
 /**
  * Creates a new item in database
  * @param {Object} req - request object
  */
-const createItemInDb = ({
-  name = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span>
-  email = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span>
-  password = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span>
-  role = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span>
-  phone = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span>
-  city = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span>
-  country = <span class="branch-0 cbranch-no" title="branch not covered" >''</span>
-}) =&gt; {
-  return new Promise((resolve, reject) =&gt; {
-    const user = new User({
+const createItemInDb = <span class="fstat-no" title="function not covered" >(</span>
+  { name = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> email = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> dob = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> country = <span class="branch-0 cbranch-no" title="branch not covered" >'' </span>},
+  files
+) =&gt; {
+<span class="cstat-no" title="statement not covered" >  return new Promise(<span class="fstat-no" title="function not covered" >as</span>ync (resolve, reject) =&gt; {</span>
+    const user = <span class="cstat-no" title="statement not covered" >new User({</span>
       name,
       email,
-      password,
-      role,
-      phone,
-      city,
+      dob,
       country,
       verification: uuid.v4()
     })
-    user.save((err, item) =&gt; {
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (err) {
+<span class="cstat-no" title="statement not covered" >    user.save(<span class="fstat-no" title="function not covered" >as</span>ync (err, item) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
 <span class="cstat-no" title="statement not covered" >        reject(buildErrObject(422, err.message))</span>
       }
 &nbsp;
-      item = JSON.parse(JSON.stringify(item))
+<span class="cstat-no" title="statement not covered" >      item = JSON.parse(JSON.stringify(item))</span>
 &nbsp;
-      delete item.password
-      delete item.blockExpires
-      delete item.loginAttempts
+      const result = <span class="cstat-no" title="statement not covered" >await fileUploads(files, item._id)</span>
+      // result.forEach((value, key) =&gt; {
+      //   if (key !== 'error') {
+      //     filesData[key] = value
+      //   }
+      // })
+<span class="cstat-no" title="statement not covered" >      console.log(result.get('image'))</span>
+<span class="cstat-no" title="statement not covered" >      await User.findByIdAndUpdate(item._id, { image: result.get('image') })</span>
+<span class="cstat-no" title="statement not covered" >      delete item.blockExpires</span>
+<span class="cstat-no" title="statement not covered" >      delete item.loginAttempts</span>
 &nbsp;
-      resolve(item)
+<span class="cstat-no" title="statement not covered" >      resolve(item)</span>
     })
   })
 }
@@ -199,7 +199,7 @@ module.exports = { createItemInDb }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Oct 21 2023 18:45:37 GMT+0530 (India Standard Time)
+                at Sat Oct 21 2023 23:19:18 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../../../../../prettify.js"></script>

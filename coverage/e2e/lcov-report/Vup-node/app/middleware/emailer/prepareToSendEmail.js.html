@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">30% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>3/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.22% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/9</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">30% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>3/10</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -97,23 +97,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,24 +127,24 @@
  * @param {string} subject - subject
  * @param {string} htmlMessage - html message
  */
-const prepareToSendEmail = (user = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> subject = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> htmlMessage = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span> =&gt; {
-  user = {
+const prepareToSendEmail = <span class="fstat-no" title="function not covered" >(u</span>ser = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> subject = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> htmlMessage = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >  user = {</span>
     name: user.name,
     email: user.email,
     verification: user.verification
   }
-  const data = {
+  const data = <span class="cstat-no" title="statement not covered" >{</span>
     user,
     subject,
     htmlMessage
   }
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.NODE_ENV === 'production') {
+<span class="cstat-no" title="statement not covered" >  if (process.env.NODE_ENV === 'production') {</span>
 <span class="cstat-no" title="statement not covered" >    sendEmail(data, <span class="fstat-no" title="function not covered" >(m</span>essageSent) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >      messageSent</span>
         ? console.log(`Email SENT to: ${user.email}`)
         : console.log(`Email FAILED to: ${user.email}`)
     )
-  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.NODE_ENV === 'development') {
+  } else <span class="cstat-no" title="statement not covered" >if (process.env.NODE_ENV === 'development') {</span>
 <span class="cstat-no" title="statement not covered" >    console.log(data)</span>
   }
 }
@@ -157,7 +157,7 @@ module.exports = { prepareToSendEmail }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Oct 21 2023 18:45:37 GMT+0530 (India Standard Time)
+                at Sat Oct 21 2023 23:19:18 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

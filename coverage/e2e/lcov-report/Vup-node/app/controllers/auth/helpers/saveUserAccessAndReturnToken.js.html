@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.67% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/15</span>
+                <span class='fraction'>6/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.67% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/15</span>
+                <span class='fraction'>6/15</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -115,21 +115,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,22 +156,22 @@ const {
  * @param {Object} req - request object
  * @param {Object} user - user object
  */
-const saveUserAccessAndReturnToken = (req = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> user = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> =&gt; {
-  return new Promise((resolve, reject) =&gt; {
-    const userAccess = new UserAccess({
+const saveUserAccessAndReturnToken = <span class="fstat-no" title="function not covered" >(r</span>eq = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> user = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >  return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+    const userAccess = <span class="cstat-no" title="statement not covered" >new UserAccess({</span>
       email: user.email,
       ip: getIP(req),
       browser: getBrowserInfo(req),
       country: getCountry(req)
     })
-    userAccess.save(async (err) =&gt; {
-      try {
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (err) {
+<span class="cstat-no" title="statement not covered" >    userAccess.save(<span class="fstat-no" title="function not covered" >as</span>ync (err) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      try {</span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
 <span class="cstat-no" title="statement not covered" >          return reject(buildErrObject(422, err.message))</span>
         }
-        const userInfo = await setUserInfo(user)
+        const userInfo = <span class="cstat-no" title="statement not covered" >await setUserInfo(user)</span>
         // Returns data with access token
-        resolve({
+<span class="cstat-no" title="statement not covered" >        resolve({</span>
           token: generateToken(user._id),
           user: userInfo
         })
@@ -190,7 +190,7 @@ module.exports = { saveUserAccessAndReturnToken }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Oct 21 2023 18:45:37 GMT+0530 (India Standard Time)
+                at Sat Oct 21 2023 23:19:18 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../../../../../prettify.js"></script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.67% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>4/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.67% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>4/12</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -91,14 +91,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -115,15 +115,15 @@ const { itemNotFound, buildErrObject } = require('../../../middleware/utils')
  * @param {Object} data - data object
  * @param {*} next - next callback
  */
-const checkPermissions = ({ id = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> roles = <span class="branch-0 cbranch-no" title="branch not covered" >[] </span>}, next) =&gt; {
-  return new Promise((resolve, reject) =&gt; {
-    User.findById(id, async (err, result) =&gt; {
-      try {
-        await itemNotFound(err, result, 'USER_NOT_FOUND')
-        if (roles.indexOf(result.role) &gt; -1) {
-          return resolve(next())
+const checkPermissions = <span class="fstat-no" title="function not covered" >({</span> id = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> roles = <span class="branch-0 cbranch-no" title="branch not covered" >[] </span>}, next) =&gt; {
+<span class="cstat-no" title="statement not covered" >  return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    User.findById(id, <span class="fstat-no" title="function not covered" >as</span>ync (err, result) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      try {</span>
+<span class="cstat-no" title="statement not covered" >        await itemNotFound(err, result, 'USER_NOT_FOUND')</span>
+<span class="cstat-no" title="statement not covered" >        if (roles.indexOf(result.role) &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >          return resolve(next())</span>
         }
-        reject(buildErrObject(401, 'UNAUTHORIZED'))
+<span class="cstat-no" title="statement not covered" >        reject(buildErrObject(401, 'UNAUTHORIZED'))</span>
       } catch (error) {
 <span class="cstat-no" title="statement not covered" >        reject(error)</span>
       }
@@ -139,7 +139,7 @@ module.exports = { checkPermissions }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Oct 21 2023 18:45:37 GMT+0530 (India Standard Time)
+                at Sat Oct 21 2023 23:19:18 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../../../../../prettify.js"></script>
