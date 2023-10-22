@@ -1,10 +1,10 @@
-const { matchedData } = require('express-validator')
-const { handleError } = require('../../middleware/utils')
+const { matchedData } = require("express-validator");
+const { handleError } = require("../../middleware/utils");
 const {
   emailExists,
-  sendRegistrationEmailMessage
-} = require('../../middleware/emailer')
-const { createItemInDb } = require('./helpers')
+  sendRegistrationEmailMessage,
+} = require("../../middleware/emailer");
+const { createItemInDb } = require("./helpers");
 
 /**
  * Create item function called by route
@@ -14,21 +14,19 @@ const { createItemInDb } = require('./helpers')
 const createUser = async (req, res) => {
   try {
     // Gets locale from header 'Accept-Language'
-    const files = req.files
-    const locale = req.getLocale()
-    req = matchedData(req)
-    const doesEmailExists = await emailExists(req.email)
+    const files = req.files;
+    const locale = req.getLocale();
+    req = matchedData(req);
+    const doesEmailExists = await emailExists(req.email);
 
     if (!doesEmailExists) {
-      
-      console.log('files', files)
-      const item = await createItemInDb(req, files)
-      sendRegistrationEmailMessage(locale, item)
-      res.status(201).json(item)
+      const item = await createItemInDb(req, files);
+      sendRegistrationEmailMessage(locale, item);
+      res.status(201).json(item);
     }
   } catch (error) {
-    handleError(res, error)
+    handleError(res, error);
   }
-}
+};
 
-module.exports = { createUser }
+module.exports = { createUser };
