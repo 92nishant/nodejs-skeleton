@@ -22,6 +22,7 @@ const createUser = async (req, res) => {
     if (!doesEmailExists) {
       const item = await createItemInDb(req, files);
       sendRegistrationEmailMessage(locale, item);
+      global.socket.broadcast.emit('userAdded', item)
       res.status(201).json(item);
     }
   } catch (error) {

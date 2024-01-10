@@ -11,6 +11,7 @@ const i18n = require('i18n')
 const initMongo = require('./config/mongo')
 const path = require('path')
 const fileUpload = require('express-fileupload')
+
 // Setup express server port from ENV, default: 3000
 app.set('port', process.env.PORT || 3000)
 
@@ -70,7 +71,22 @@ app.set('views', path.join(__dirname, 'views'))
 app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html')
 app.use(require('./app/routes'))
-app.listen(app.get('port'))
+
+const server = app.listen(app.get('port'))
+
+let io = require("socket.io")(server,{
+  cors: {
+    origin: "http://localhost:8080",
+    methods: ["GET", "POST"]
+  }
+});
+io.on('connection', (socket) => {
+  global.socket = socket;
+  global.socket.on('userAdded', (data) => {
+    console.log(data)
+  })
+  console.log(`New Connection: ${socket.id}`)
+})
 
 // Init MongoDB
 initMongo()
