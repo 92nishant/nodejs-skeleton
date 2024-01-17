@@ -76,7 +76,7 @@ const server = app.listen(app.get("port"));
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "*",
+    origin: "http://localhost:8080",
     methods: ["GET", "POST"],
   },
 });
